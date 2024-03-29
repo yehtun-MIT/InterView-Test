@@ -101,24 +101,20 @@
     </div>
 </li>
     @endcan
-        
-
-        <li class="nav-item {{ Request::is('admin/posts*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('admin.posts.index') }}">
-                <i class="icon-paper menu-icon"></i>
-                <span class="menu-title">Posts</span>
-            </a>
-        </li>
-        <li class="nav-item {{ Request::is('admin/employees*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('admin.employees.index') }}">
-                <i class="mdi mdi-calendar menu-icon"></i>
-                <span class="menu-title">Employee</span>
-            </a>
-        </li>
+       
         <li class="nav-item {{ Request::is('admin/system-calendar*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.systemCalendar') }}">
                 <i class="mdi mdi-calendar menu-icon"></i>
                 <span class="menu-title">System Calander</span>
+            </a>
+        </li>
+
+
+        {{-- Employee --}}
+        <li class="nav-item {{ Request::is('admin/employees*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.employees.index') }}">
+                <i class="mdi mdi-calendar menu-icon"></i>
+                <span class="menu-title">Employee</span>
             </a>
         </li>
     </ul>

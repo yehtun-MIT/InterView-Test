@@ -92,7 +92,27 @@ class PermissionTableSeeder extends Seeder
             [
                 'id'    => 19,
                 'title' =>'audit_logs_delete'
-            ]
+            ],
+            [
+                'id'    => 20,
+                'title' => 'employee_create',
+            ],
+            [
+                'id'    => 21,
+                'title' => 'employee_edit',
+            ],
+            [
+                'id'    => 22,
+                'title' => 'employee_show',
+            ],
+            [
+                'id'    => 23,
+                'title' => 'employee_delete',
+            ],
+            [
+                'id'    => 24,
+                'title' => 'employee_access',
+            ],
         ];
 
         Permission::insert($permissions);
