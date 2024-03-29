@@ -39,9 +39,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('users', 'UserController');
 
     //Profile
-    Route::get('user_info/index', function () { return view('admin.usersetting.index'); })->name('user_info.index');
+    Route::get('user_info/index', function () {
+        return view('admin.usersetting.index');
+    })->name('user_info.index');
     Route::put('user_info/edit/profile/{id}', 'ProfileController@updateProfile')->name('user_info.updateProfile');
-    Route::put('user_info/updatePassword/{id}','ProfileController@updatePassword')->name('user_info.updatePassword');
+    Route::put('user_info/updatePassword/{id}', 'ProfileController@updatePassword')->name('user_info.updatePassword');
 
     // Permission
     Route::delete('permissions/destroy', 'PermissionController@massDestroy')->name('permissions.massDestroy');
@@ -62,6 +64,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Employee 
     Route::resource('employees', 'EmployeeController');
+
+
+    // Employee Profile
+    Route::resource('employee-profile', 'EmployeeProfileController');
+
+    // Department
+    Route::resource('department', 'DepartmentController');
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
 });

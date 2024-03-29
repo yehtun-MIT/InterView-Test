@@ -102,6 +102,33 @@
 </li>
     @endcan
        
+        
+
+        <li class="nav-item {{ Request::is('admin/posts*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.posts.index') }}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">Posts</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('admin/department*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.department.index') }}">
+                <i class="mdi mdi-calendar menu-icon"></i>
+                <span class="menu-title">Department</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('admin/employees*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.employees.index') }}">
+                <i class="mdi mdi-calendar menu-icon"></i>
+                <span class="menu-title">Employee</span>
+            </a>
+        </li>
+        
+        <li class="nav-item {{ Request::is('admin/employee-profile*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.employee-profile.index') }}">
+                <i class="mdi mdi-calendar menu-icon"></i>
+                <span class="menu-title">Employee Profile</span>
+            </a>
+        </li>
         <li class="nav-item {{ Request::is('admin/system-calendar*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.systemCalendar') }}">
                 <i class="mdi mdi-calendar menu-icon"></i>
