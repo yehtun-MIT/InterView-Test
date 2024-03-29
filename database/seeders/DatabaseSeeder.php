@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +19,10 @@ class DatabaseSeeder extends Seeder
             RoleTableSeeder::class,
             RoleUserTableSeeder::class,
             PermissionTableSeeder::class,
-            PermissionRoleTableSeeder::class
+            PermissionRoleTableSeeder::class,
+            DepartmentSeeder::class,
+            EmployeeSeeder::class,
+            EmployeeProfileSeeder::class,
         ]);
     }
 }
