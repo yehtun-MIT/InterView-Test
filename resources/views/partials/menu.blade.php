@@ -57,7 +57,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-            <a class="nav-link" href="http://127.0.0.1:8000">
+            <a class="nav-link" href="{{ route('admin.home') }}">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -102,14 +102,6 @@
 </li>
     @endcan
        
-        
-
-        <li class="nav-item {{ Request::is('admin/posts*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('admin.posts.index') }}">
-                <i class="icon-paper menu-icon"></i>
-                <span class="menu-title">Posts</span>
-            </a>
-        </li>
         <li class="nav-item {{ Request::is('admin/department*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.department.index') }}">
                 <i class="mdi mdi-calendar menu-icon"></i>
@@ -119,7 +111,7 @@
         <li class="nav-item {{ Request::is('admin/employees*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.employees.index') }}">
                 <i class="mdi mdi-calendar menu-icon"></i>
-                <span class="menu-title">Employee</span>
+                <span class="menu-title">Employees</span>
             </a>
         </li>
         
@@ -136,14 +128,6 @@
             </a>
         </li>
 
-
-        {{-- Employee --}}
-        <li class="nav-item {{ Request::is('admin/employees*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('admin.employees.index') }}">
-                <i class="mdi mdi-calendar menu-icon"></i>
-                <span class="menu-title">Employee</span>
-            </a>
-        </li>
     </ul>
 </nav>
 

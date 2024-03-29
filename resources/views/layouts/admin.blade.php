@@ -49,6 +49,15 @@
         .text-loading {
             color: #4B49AC !important ;
         }
+        .office-logo {
+        height: 88px !important;
+        width: 99px;
+
+        }
+        .office-logo-mini {
+            height: 81px !important;
+            width: 60px !important;
+        }
     </style>
     @yield('styles')
 
@@ -66,9 +75,9 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo mr-5" href="{{ route('home') }}"><img
-                        src="{{ asset('dashboard/images/logo.svg') }}" class="mr-2" alt="logo" /></a>
+                        src="{{ asset('image/office-logo.png') }}" class="mr-2 office-logo" alt="logo"  /></a>
                 <a class="navbar-brand brand-logo-mini" href="{{ route('home') }}"><img
-                        src="{{ asset('dashboard/images/logo-mini.svg') }}" alt="logo" /></a>
+                        src="{{ asset('image/office-logo.png') }}" alt="logo" class="office-logo-mini" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize"
