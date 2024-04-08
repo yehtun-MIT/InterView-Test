@@ -113,6 +113,26 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 24,
                 'title' => 'employee_access',
             ],
+            [
+                'id'    => 25,
+                'title' => 'department_access',
+            ],
+            [
+                'id'    => 26,
+                'title' => 'department_create',
+            ],
+            [
+                'id'    => 27,
+                'title' => 'department_edit',
+            ],
+            [
+                'id'    => 28,
+                'title' => 'department_show',
+            ],
+            [
+                'id'    => 29,
+                'title' => 'department_delete',
+            ],
         ];
 
         Permission::insert($permissions);

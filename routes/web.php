@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Permission;
+use App\Models\Department;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,7 +63,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('posts/ckmedia', 'PostController@storeCKEditorImages')->name('posts.storeCKEditorImages');
     Route::resource('posts', 'PostController');
 
-    // Employee 
+    // Employee
     Route::resource('employees', 'EmployeeController');
 
 
@@ -70,6 +71,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('employee-profile', 'EmployeeProfileController');
 
     // Department
+    Route::delete('department/destroy', 'DepartmentController@massDestroy')->name('department.massDestroy');
     Route::resource('department', 'DepartmentController');
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
