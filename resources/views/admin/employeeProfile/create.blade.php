@@ -13,9 +13,28 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="" for="name">Employee Name</label>
-                            <select name="employee_code" id="" class="form-select">
-                                <option value="">Please Choose Employee</option>
-                            </select>
+                            <input class="form-control" type="text" name="name" id="name" value="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="" for="email">Email</label>
+                            <input class="form-control" type="email"
+                                name="email" id="email" value="" >
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="" for="address">Address</label>
+                            <input class="form-control" type="text"
+                                name="address" id="address" value="" >
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="" for="employee_id">Employee</label>
+                            <input class="form-control" type="text"
+                                name="employee_id" id="employee_id" value="" >
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
@@ -23,6 +42,13 @@
                             <label class="" for="emp_code">Employee Code</label>
                             <input class="form-control" type="text"
                                 name="emp_code" id="emp_code" value="" >
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="" for="department">Department</label>
+                            <input class="form-control" type="text"
+                                name="department_id" id="department_id" value="" >
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex">

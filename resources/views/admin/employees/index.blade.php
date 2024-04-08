@@ -19,17 +19,61 @@
                 <table class="table table-bordered table-striped table-hover datatable datatable-Permission">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Employee Code</th>
                             <th>Department</th>
                             <th>Address</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($examples as $example)
-                        @endforeach --}}
+                        @foreach ($employees as $employee)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                                <td>{{$employee->name}}</td>
+                                <td>{{ $employee->email }}</td>
+                                <td>{{$employee->department_id}}</td>
+                                <td>{{$employee->address}}</td>
+                                <td>
+
+                                    @can('employee_show')
+                                        <a class="p-0 glow btn btn-primary text-white"
+                                            style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
+                                            title="view" href="{{ route('admin.employees.show', $employee->id) }}">
+                                            Show
+                                        </a>
+                                    @endcan
+
+                                    @can('employee_edit')
+                                        <a class="p-0 glow btn btn-success text-white"
+                                            style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
+                                            title="edit" href="{{ route('admin.employees.edit', $employee->id) }}">
+                                            Edit
+                                        </a>
+                                    @endcan
+
+                                    @can('employee_delete')
+                                        <form id="orderDelete-{{ $employee->id }}"
+                                            action="{{ route('admin.employees.destroy', $employee->id) }}" method="POST"
+                                            onsubmit=""
+                                            style="display: inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden"
+                                                style="width: 60px;display: inline-block;line-height: 36px;"
+                                                class=" p-0 glow" value="{{ trans('global.delete') }}">
+                                            <button
+                                                style="width: 60px;display: inline-block;line-height: 36px;border:none;"
+                                                class=" p-0 glow btn btn-danger text-white" title="delete"
+                                                onclick="return confirm('{{ trans('global.areYouSure') }}');">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    @endcan
+                                </td>
+                           </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

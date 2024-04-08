@@ -137,6 +137,30 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 30,
                 'title' => 'department_trashList',
             ],
+            [
+                'id'    => 31,
+                'title' => 'employee_profiles_access',
+            ],
+            [
+                'id'    => 32,
+                'title' => 'employee_profiles_show',
+            ],
+            [
+                'id'    => 33,
+                'title' => 'employee_profiles_delete',
+            ],
+            [
+                'id'    => 34,
+                'title' => 'employee_profiles_create',
+            ],
+            [
+                'id'    => 35,
+                'title' => 'employee_profiles_edit',
+            ],
+            [
+                'id'    => 36,
+                'title' => 'employee_profiles_trashList',
+            ],
         ];
 
         Permission::insert($permissions);

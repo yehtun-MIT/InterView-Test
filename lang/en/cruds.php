@@ -114,4 +114,28 @@ return [
             'confirm_password' => 'Re-type Password',
         ],
     ],
+    'employee_profile' => [
+        'title'          => 'Employee Profile',
+        'title_singular' => 'Employee Profile',
+        'fields'         => [
+            'id'                      => 'ID',
+            'name'                    => 'Name',
+            'email'                   => 'Email',
+            'address'                 => 'Address',
+            'employee'               => 'Employee',
+            'emp_code'              => "Employee Code",
+            'department'             => 'Department',
+        ],
+    ],
+    'employee' => [
+        'title'          => 'Employees',
+        'title_singular' => 'Employee',
+        'fields'         => [
+            'id'                      => 'ID',
+            'name'                    => 'Name',
+            'email'                   => 'Email',
+            'address'                 => 'Address',
+            'department'             => 'Department',
+        ],
+    ],
 ];

@@ -20,13 +20,62 @@
                         <tr>
                             <th>No</th>
                             <th>Employee Name</th>
-                            <th>Employee Code</th>                          
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Employee</th>
+                            <th>Employee Code</th>
+                            <th>Department</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       
+                    @foreach ($employee_profiles as $employee_profile)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$employee_profile->name}}</td>
+                            <td>{{$employee_profile->email}}</td>
+                            <td>{{$employee_profile->address}}</td>
+                            <td>{{$employee_profile->employee_id}}</td>
+                            <td>{{$employee_profile->emp_code}}</td>
+                            <td>{{$employee_profile->department_id}}</td>
+                            <td>
+                                @can('employee_profiles_show')
+                                        <a class="p-0 glow btn btn-primary text-white"
+                                            style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
+                                            title="view" href="{{ route('admin.employee-profile.show', $employee_profile->id) }}">
+                                            Show
+                                        </a>
+                                    @endcan
 
+                                    @can('employee_profiles_edit')
+                                        <a class="p-0 glow btn btn-success text-white"
+                                            style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
+                                            title="edit" href="{{ route('admin.employee-profile.edit', $employee_profile->id) }}">
+                                            Edit
+                                        </a>
+                                    @endcan
+
+                                    @can('employee_profiles_delete')
+                                        <form id="orderDelete-{{ $employee_profile->id }}"
+                                            action="{{ route('admin.employee-profile.destroy', $employee_profile->id) }}" method="POST"
+                                            onsubmit=""
+                                            style="display: inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden"
+                                                style="width: 60px;display: inline-block;line-height: 36px;"
+                                                class=" p-0 glow" value="{{ trans('global.delete') }}">
+                                            <button
+                                                style="width: 60px;display: inline-block;line-height: 36px;border:none;"
+                                                class=" p-0 glow btn btn-danger text-white" title="delete"
+                                                onclick="return confirm('{{ trans('global.areYouSure') }}');">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    @endcan
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

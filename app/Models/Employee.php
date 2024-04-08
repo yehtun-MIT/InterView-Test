@@ -11,7 +11,7 @@ class Employee extends Model
     protected $fillable = [
         'name',
         'email',
-        'phone_no',
+        'department_id',
         'address',
     ];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

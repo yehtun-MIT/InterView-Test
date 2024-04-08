@@ -2,6 +2,7 @@
 
 use App\Models\Permission;
 use App\Models\Department;
+use APP\Models\EmployeeProfile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,6 +69,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
     // Employee Profile
+    Route::delete('employee-profile/destroy', 'EmployeeProfileController@massDestroy')->name('employee-profile.massDestroy');
+    Route::get('employee-profile/trash', 'EmployeeProfileController@trashList')->name('employee-profile.trashList');
+    Route::get('employee-profile/restore/trash/{id}','EmployeeProfileController@restoreTrash')->name('employee-profile.restore.trash');
+    Route::delete('employee-profile/trashDelete/{id}','EmployeeProfileController@trashDelete')->name('employee-profile.trashDelete');
     Route::resource('employee-profile', 'EmployeeProfileController');
 
     // Department
@@ -75,7 +80,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('department/trash', 'DepartmentController@trashList')->name('department.trashList');
     Route::get('department/restore/trash/{id}','DepartmentController@restoreTrash')->name('department.restore.trash');
     Route::delete('department/trashDelete/{id}','DepartmentController@trashDelete')->name('department.trashDelete');
-    Route::get('department/getmeasurement/{id}','DepartmentController@getmeasurement')->name('department.getmeasurement');
     Route::resource('department', 'DepartmentController');
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
