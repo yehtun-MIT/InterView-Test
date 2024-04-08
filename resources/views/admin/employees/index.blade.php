@@ -33,7 +33,7 @@
                             <td>{{$loop->iteration}}</td>
                                 <td>{{$employee->name}}</td>
                                 <td>{{ $employee->email }}</td>
-                                <td>{{$employee->department_id}}</td>
+                                <td>{{$employee->department->name}}</td>
                                 <td>{{$employee->address}}</td>
                                 <td>
 

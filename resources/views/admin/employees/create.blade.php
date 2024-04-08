@@ -60,7 +60,13 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="required" for="address">Department</label>
-                            <input class="form-control {{ $errors->has('department_id') ? 'is-invalid' : '' }}" type="text" name="department_id" id="department_id" value="" required>
+                            <select class="select2 mb-3" aria-label="form-select-lg example" name="department_id" id="department_id">
+                                <option selected value="">Open this select menu</option>
+                                @foreach ($department as $key => $department)
+                                    <option  value="{{ $key }}">{{ $department }}</option>
+                                @endforeach
+                            </select>
+
                             @if ($errors->has('department_id'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('department_id') }}
