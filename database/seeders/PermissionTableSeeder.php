@@ -133,6 +133,10 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 29,
                 'title' => 'department_delete',
             ],
+            [
+                'id'    => 30,
+                'title' => 'department_trashList',
+            ],
         ];
 
         Permission::insert($permissions);

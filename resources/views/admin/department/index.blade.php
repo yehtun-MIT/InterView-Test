@@ -9,7 +9,11 @@
                    <a class="btn btn-success" href="{{ route('admin.department.create') }}">
                        {{ trans('global.add') }} {{ trans('cruds.department.title_singular') }}
                    </a>
+                   <a class="btn btn-primary" href="{{ route('admin.department.trashList') }}">
+                    {{ trans('cruds.department.fields.trash') }}
+                </a>
                </div>
+
            </div>
        @endcan
         </div>

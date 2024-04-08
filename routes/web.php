@@ -72,6 +72,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Department
     Route::delete('department/destroy', 'DepartmentController@massDestroy')->name('department.massDestroy');
+    Route::get('department/trash', 'DepartmentController@trashList')->name('department.trashList');
+    Route::get('department/restore/trash/{id}','DepartmentController@restoreTrash')->name('department.restore.trash');
+    Route::delete('department/trashDelete/{id}','DepartmentController@trashDelete')->name('department.trashDelete');
+    Route::get('department/getmeasurement/{id}','DepartmentController@getmeasurement')->name('department.getmeasurement');
     Route::resource('department', 'DepartmentController');
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');

@@ -60,6 +60,30 @@ class DepartmentController extends Controller
         return redirect()->route('admin.department.index')->with('message' ,'Department Update Successfuly!');
     }
 
+    public function trashList()
+    {
+        abort_if(Gate::denies("department_trashList"), Response::HTTP_FORBIDDEN, "403 Forbidden");
+        $departments = $this->department->onlyTrashed()->get();
+        return view('admin.department.trashList', compact('departments'));
+    }
+
+    public function restoreTrash($id)
+    {
+        $departments = $this->department->withTrashed()->find($id)->restore();
+        return redirect()->route('admin.department.index')->with('message' , 'Department Restore Successfully!');
+    }
+    public function trashDelete($id)
+    {
+        $departments = $this->department->withTrashed()->find($id);
+
+        if ($departments) {
+            $departments->forceDelete();
+                return redirect()->route('admin.department.trashList')->with('message',"Trash Data Delete Successfully!");
+        } else {
+            return redirect()->route('admin.department.trashList')->with("message","Fail");
+        }
+    }
+
     public function destroy($id)
     {
         abort_if(Gate::denies("department_delete"), Response::HTTP_FORBIDDEN,"403 Forbidden");
