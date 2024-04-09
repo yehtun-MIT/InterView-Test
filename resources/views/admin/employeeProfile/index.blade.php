@@ -22,7 +22,6 @@
                             <th>Employee Name</th>
                             <th>Email</th>
                             <th>Address</th>
-                            <th>Employee</th>
                             <th>Employee Code</th>
                             <th>Department</th>
                             <th>Action</th>
@@ -32,12 +31,11 @@
                     @foreach ($employee_profiles as $employee_profile)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$employee_profile->name}}</td>
+                            <td>{{$employee_profile->employee->name ?? ''}}</td>
                             <td>{{$employee_profile->email}}</td>
                             <td>{{$employee_profile->address}}</td>
-                            <td>{{$employee_profile->employee_id}}</td>
                             <td>{{$employee_profile->emp_code}}</td>
-                            <td>{{$employee_profile->department_id}}</td>
+                            <td>{{$employee_profile->department->name  ?? ''}}</td>
                             <td>
                                 @can('employee_profiles_show')
                                         <a class="p-0 glow btn btn-primary text-white"

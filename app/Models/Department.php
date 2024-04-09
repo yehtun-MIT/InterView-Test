@@ -31,4 +31,12 @@ class Department extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public function employees() {
+        return $this->hasMany(Employee::class);
+    }
+
+    public function employee_profiles() {
+        return $this->hasMany(EmployeeProfile::class);
+    }
 }

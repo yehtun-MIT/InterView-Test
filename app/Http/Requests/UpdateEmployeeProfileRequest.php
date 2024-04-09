@@ -18,10 +18,6 @@ class UpdateEmployeeProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => [
-                'required',
-                'string'
-            ],
             "email" => [
                 'required',
                 'string'

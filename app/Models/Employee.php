@@ -19,4 +19,8 @@ class Employee extends Model
     public function department() {
         return $this->belongsTo(Department::class);
     }
+
+    public function employee_profile() {
+        return $this->hasOne(EmployeeProfile::class);
+    }
 }

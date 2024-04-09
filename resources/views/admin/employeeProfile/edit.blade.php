@@ -27,15 +27,13 @@
                 <div class="row d-flex flex-warp">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
-                            <label class="required" for="name">{{ trans('cruds.employee_profile.fields.name') }}</label>
-                            <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
-                                name="name" id="name" value="{{ old('name', $employee_profiles->name) }}" required>
-                            <span class="name_error"></span>
-                            @if ($errors->has('title'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('name') }}
-                                </div>
-                            @endif
+                            <label class="required" for="employee_id">{{ trans('cruds.employee_profile.fields.employee') }}</label>
+                            <select class="select2 mb-3" aria-label=".form-select-lg example" name="employee_id" id="employee_id">
+                                <option selected value="">Open this select menu</option>
+                                @foreach ($employees as $key => $employee)
+                                        <option  value="{{ $key }}" {{ $key === old('employee_id') ? 'selected' : '' }} {{ $key === $employee_profiles->employee_id ? 'selected' : '' }}>{{ $employee }}</option>
+                                    @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
@@ -66,19 +64,6 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
-                            <label class="required" for="employee_id">{{ trans('cruds.employee_profile.fields.employee') }}</label>
-                            <input class="form-control {{ $errors->has('employee_id') ? 'is-invalid' : '' }}" type="text"
-                                name="employee_id" id="employee_id" value="{{ old('employee_id', $employee_profiles->employee_id) }}" required>
-                            <span class="employee_id_error"></span>
-                            @if ($errors->has('title'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('employee_id') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="form-group">
                             <label class="required" for="emp_code">{{ trans('cruds.employee_profile.fields.emp_code') }}</label>
                             <input class="form-control {{ $errors->has('emp_code') ? 'is-invalid' : '' }}" type="text"
                                 name="emp_code" id="emp_code" value="{{ old('emp_code', $employee_profiles->emp_code) }}" required>
@@ -93,14 +78,13 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="required" for="department_id">{{ trans('cruds.employee_profile.fields.department') }}</label>
-                            <input class="form-control {{ $errors->has('department_id') ? 'is-invalid' : '' }}" type="text"
-                                name="department_id" id="department_id" value="{{ old('department_id', $employee_profiles->department_id) }}" required>
-                            <span class="department_id_error"></span>
-                            @if ($errors->has('title'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('department_id') }}
-                                </div>
-                            @endif
+                            <select class="select2 mb-3" aria-label=".form-select-lg example" name="department_id" id="department_id">
+                                <option selected value="">Open this select menu</option>
+                                @foreach ($department as $key => $department)
+                                        <option  value="{{ $key }}" {{ $key === old('department_id') ? 'selected' : '' }} {{ $key === $employee_profiles->department_id ? 'selected' : '' }}>{{ $department }}</option>
+                                    @endforeach
+                            </select>
+                            </select>
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex ">

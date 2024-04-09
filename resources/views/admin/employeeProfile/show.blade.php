@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <th>{{ trans('cruds.employee_profile.fields.name') }}</th>
-                        <td>{{ $employee_profiles->name }}</td>
+                        <td>{{ $employee_profiles->employee->name }}</td>
                     </tr>
                     <tr>
                         <th>
@@ -41,12 +41,12 @@
                         <td>{{ $employee_profiles->address }}</td>
                     </tr>
                     <tr>
-                        <th>{{ trans('cruds.employee_profile.fields.employee') }}</th>
-                        <td>{{ $employee_profiles->employee_id }}</td>
+                        <th>{{ trans('cruds.employee_profile.fields.emp_code') }}</th>
+                        <td>{{ $employee_profiles->emp_code }}</td>
                     </tr>
                     <tr>
                         <th>{{ trans('cruds.employee_profile.fields.department') }}</th>
-                        <td>{{ $employee_profiles->department_id }}</td>
+                        <td>{{ $employee_profiles->department->name }}</td>
                     </tr>
                 </tbody>
             </table>
