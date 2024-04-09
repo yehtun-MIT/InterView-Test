@@ -35,7 +35,7 @@
                             <td>{{$employee_profile->email}}</td>
                             <td>{{$employee_profile->address}}</td>
                             <td>{{$employee_profile->emp_code}}</td>
-                            <td>{{$employee_profile->department->name  ?? ''}}</td>
+                            <td>{{$employee_profile->employee->department->name  ?? ''}}</td>
                             <td>
                                 @can('employee_profiles_show')
                                         <a class="p-0 glow btn btn-primary text-white"

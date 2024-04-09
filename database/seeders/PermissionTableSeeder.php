@@ -157,10 +157,6 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 35,
                 'title' => 'employee_profiles_edit',
             ],
-            [
-                'id'    => 36,
-                'title' => 'employee_profiles_trashList',
-            ],
         ];
 
         Permission::insert($permissions);

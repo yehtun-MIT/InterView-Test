@@ -42,17 +42,6 @@
                                 name="emp_code" id="emp_code" value="" >
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="form-group">
-                            <label class="" for="department">Department</label>
-                            <select class="select2 mb-3" aria-label="form-select-lg example" name="department_id" id="department_id">
-                                <option selected value="">Open this select menu</option>
-                                @foreach ($department as $key => $department)
-                                    <option  value="{{ $key }}">{{ $department }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex">
                         <div class="form-group mt-2">
                             <button class="btn btn-success" type="submit" id="save">

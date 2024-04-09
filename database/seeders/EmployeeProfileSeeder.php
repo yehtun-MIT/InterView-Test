@@ -20,7 +20,6 @@ class EmployeeProfileSeeder extends Seeder
         'email' => 'emp1@gmail.com',
         'address' => 'Address',
         'emp_code' => 'EMP001',
-        'department_id' => 1,
         ]);
         // Seed 2
         EmployeeProfile::create([
@@ -28,7 +27,6 @@ class EmployeeProfileSeeder extends Seeder
             'email' => 'emp2@gmail.com',
             'address' => 'Address',
             'emp_code' => 'EMP002',
-            'department_id' => 2,
         ]);
 
         // Seed 3
@@ -37,7 +35,6 @@ class EmployeeProfileSeeder extends Seeder
             'email' => 'emp3@gmail.com',
             'address' => 'Address',
             'emp_code' => 'EMP003',
-            'department_id' => 3,
         ]);
     }
 }

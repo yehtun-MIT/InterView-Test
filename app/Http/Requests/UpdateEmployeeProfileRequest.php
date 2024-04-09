@@ -30,10 +30,6 @@ class UpdateEmployeeProfileRequest extends FormRequest
                 'required',
                 'string'
             ],
-            "department_id" => [
-                'required',
-                'string'
-            ],
         ];
     }
 }

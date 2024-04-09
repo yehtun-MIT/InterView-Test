@@ -13,13 +13,8 @@ class EmployeeProfile extends Model
         'email',
         'address',
         'emp_code',
-        'department_id',
     ];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-
-    public function department(){
-        return $this->belongsTo(Department::class);
-    }
 
     public function employee() {
         return $this->belongsTo(Employee::class);

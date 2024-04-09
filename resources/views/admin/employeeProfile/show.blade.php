@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <th>{{ trans('cruds.employee_profile.fields.department') }}</th>
-                        <td>{{ $employee_profiles->department->name }}</td>
+                        <td>{{ $employee_profiles->employee->department->name }}</td>
                     </tr>
                 </tbody>
             </table>
