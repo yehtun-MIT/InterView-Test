@@ -35,8 +35,4 @@ class Department extends Model
     public function employees() {
         return $this->hasMany(Employee::class);
     }
-
-    public function employee_profiles() {
-        return $this->hasMany(EmployeeProfile::class);
-    }
 }
